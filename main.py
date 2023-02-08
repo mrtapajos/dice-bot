@@ -1,6 +1,6 @@
 import discord
 from commands import*
-import asyncio
+from time import sleep
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -26,7 +26,9 @@ class MyClient(discord.Client):
 
         # NÃO PODE COMEÇAR COM D
         if msg.content.startswith('d'):
-            try:               
+            try:
+                await msg.channel.send('Rolling dice...')
+                sleep(2)               
                 await msg.channel.send(dice(msg.content))
             except Exception as error:
                 await msg.channel.send('Você fez algo de errado seu imbecil')
@@ -38,5 +40,3 @@ client = MyClient(intents=intents)
 
 if __name__ == '__main__':
     client.run(open('token.txt').readline())
-
-
