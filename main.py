@@ -26,11 +26,11 @@ class MyClient(discord.Client):
 
         # NÃO PODE COMEÇAR COM D
         if msg.content.startswith('d'):
-            e = msg.content.replace('d', '')
             try:               
-                await msg.channel.send(str((dice(e))))
-            except:
+                await msg.channel.send(dice(msg.content))
+            except Exception as error:
                 await msg.channel.send('Você fez algo de errado seu imbecil')
+                await msg.channel.send(str(error))
 
         
 

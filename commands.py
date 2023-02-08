@@ -1,9 +1,10 @@
 import discord
 from random import randint
 
-async def dice(cmd:int):
-    random_number = randint(1, cmd+1)
-    await f'Number: {random_number}'
+def dice(cmd):
+    num = int(cmd.replace('d', ''))
+    random_number = randint(1, num+1)
+    return f'Number: {random_number}'
    
 
     """ if msg == 'd2':
