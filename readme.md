@@ -1,3 +1,3 @@
-# Bot feito para jogar gerar dados aleatórios
-## Feito em discord.py
-### Use "?" para recebera ajuda
+# discord.py bot
+## made to roll random dices
+### send "?" for help
