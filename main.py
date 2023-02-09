@@ -19,12 +19,12 @@ class MyClient(discord.Client):
         if msg.author == self.user:
             return
 
-        # AQUI TA FUNCIONANDO POR ENQUANTO
+        # HELP COMMAND
         if msg.content.startswith('?') or msg.content.startswith('help'):
             await help(msg)
             return
 
-        # NÃO PODE COMEÇAR COM D
+        # DICE ROLLING
         if msg.content.startswith('d'):
             try:
                 await msg.channel.send('Rolling dice...')
